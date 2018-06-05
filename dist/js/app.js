@@ -62375,7 +62375,7 @@ var RecorderContainer = function (_Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement('video', { id: 'myVideo', 'class': 'video-js vjs-default-skin' })
+                _react2.default.createElement('video', { id: 'myVideo', className: 'video-js vjs-default-skin' })
             );
         }
     }]);
