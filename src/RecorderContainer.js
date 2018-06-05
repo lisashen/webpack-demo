@@ -58,7 +58,7 @@ export default class RecorderContainer extends Component {
     render() {
         return(
             <div>
-                <video id="myVideo" className="video-js vjs-default-skin"></video>
+                <video id="myVideo" class="video-js vjs-default-skin"></video>
             </div>
         );
     }
