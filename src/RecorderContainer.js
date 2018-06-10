@@ -16,9 +16,12 @@ import Wavesurfer from 'videojs-wavesurfer/dist/videojs.wavesurfer.js';
 
 // register videojs-record plugin with this import
 import Record from 'videojs-record/dist/videojs.record.js';
+import Wavesurfer from 'videojs-wavesurfer/dist/videojs.wavesurfer.js';
 import 'video.js/dist/video-js.min.css';
 import 'videojs-record/dist/css/videojs.record.css';
-
+import WaveSurfer from 'wavesurfer.js';
+import MicrophonePlugin from 'wavesurfer.js/dist/plugin/wavesurfer.microphone.js';
+WaveSurfer.microphone = MicrophonePlugin;
 let player;
 const elementId = 'myVideo';
 const playerOptions = {
@@ -32,10 +35,18 @@ const playerOptions = {
         volumePanel: false
     },
     plugins: {
-        // configure videojs-record plugin
+        wavesurfer: {
+            src: "live",
+            waveColor: "#36393b",
+            progressColor: "black",
+            debug: true,
+            cursorWidth: 1,
+            msDisplayMax: 20,
+            hideScrollbar: true
+        },
         record: {
-            audio: false,
-            video: true,
+            audio: true,
+            video: false,
             debug: true
         }
     }
@@ -58,7 +69,7 @@ export default class RecorderContainer extends Component {
     render() {
         return(
             <div>
-                <video id="myVideo" class="video-js vjs-default-skin"></video>
+                <video id="myVideo" className="video-js vjs-default-skin"></video>
             </div>
         );
     }
