@@ -20,8 +20,10 @@ import Wavesurfer from 'videojs-wavesurfer/dist/videojs.wavesurfer.js';
 import 'video.js/dist/video-js.min.css';
 import 'videojs-record/dist/css/videojs.record.css';
 import WaveSurfer from 'wavesurfer.js';
-import MicrophonePlugin from 'wavesurfer.js/dist/plugin/wavesurfer.microphone.js';
+var MicrophonePlugin = require('wavesurfer.js/src/plugin/microphone.js').default;
+console.error('sddf啊实打实大的撒打算的撒', MicrophonePlugin)
 WaveSurfer.microphone = MicrophonePlugin;
+console.error('sddf啊实打实大的撒打算的撒', MicrophonePlugin)
 let player;
 const elementId = 'myVideo';
 const playerOptions = {

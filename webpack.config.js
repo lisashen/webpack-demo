@@ -37,6 +37,11 @@ module.exports = {
                 ]
             },
             {
+                test: /\.jsx?$/,
+                use: ['babel-loader'],
+                include: path.resolve(__dirname, 'src'),
+            },
+            {
                 test: /\.(gif|png|jpg|woff|svg|ttf|eot)\??.*$/,
                 // loader: "style-loader!css-loader"
                 // loader: ExtractTextPlugin.extract("style-loader", "css-loader")
